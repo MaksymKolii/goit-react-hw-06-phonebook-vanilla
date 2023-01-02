@@ -36,7 +36,7 @@ export function ContactList() {
         ) : (
           <P>
             You don't have any contacts named
-            <Span> {filter}</Span>
+            <Span>{filter}</Span>
           </P>
         )}
       </ListUl>

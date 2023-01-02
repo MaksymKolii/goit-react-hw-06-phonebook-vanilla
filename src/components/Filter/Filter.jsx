@@ -17,7 +17,6 @@ export const Filter = () => {
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
         onChange={ev => dispatch(setFilter(ev.target.value.toLowerCase()))}
-        // value={filtered}
       />
     </Label>
   );
@@ -25,5 +24,4 @@ export const Filter = () => {
 
 Filter.propTypes = {
   onChange: PropTypes.func,
-  // value: PropTypes.string,
 };

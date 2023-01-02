@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import React from 'react';
 import { useFormik } from 'formik';
 import { Form, Label, Input, Button, Div } from './ContactForm.styled';
@@ -13,8 +12,6 @@ import { addContact } from 'redux/contacts/contacts-actions';
 
 export const ContactForm = () => {
   const contacts = useSelector(getContacts);
-  // const [name, setName] = useState('');
-  // const [number, setNumber] = useState('');
 
   const dispatch = useDispatch();
 

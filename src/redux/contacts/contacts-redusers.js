@@ -1,8 +1,5 @@
 import { ADD_CONTACT, DELETE_CONTACT } from './contacts-types';
 
-// import { createReducer } from '@reduxjs/toolkit';
-// import { addContact, deleteContact } from './contacts-actions';
-
 const initialState = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
   { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
@@ -21,9 +18,3 @@ export const contactReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-
-// export const contactReducer = createReducer(initialState, {
-//   [addContact]: (state, action) => [action.payload, ...state],
-//   [deleteContact]: (state, { payload }) =>
-//     state.filter(({ id }) => id !== payload),
-// });

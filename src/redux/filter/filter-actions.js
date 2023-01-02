@@ -5,5 +5,4 @@ export const setFilter = value => {
   };
 };
 
-// import { createAction } from '@reduxjs/toolkit';
-// export const setFilter = createAction('filters / filter');
+

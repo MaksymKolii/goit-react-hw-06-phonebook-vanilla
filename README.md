@@ -1,1 +1,1 @@
-# goit-react-hw-06-phonebook-vanilla
+# goit-react-hw-06-phonebook

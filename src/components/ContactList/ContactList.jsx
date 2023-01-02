@@ -7,36 +7,39 @@ import PropTypes from 'prop-types';
 import { ContactItem } from 'components/ContactItem/ContactItem';
 
 import { List } from '../ContactItem/ContactItem.styled';
-import { ListUl } from './ContactList.styled';
+import { ListUl, P, Span } from './ContactList.styled';
 
 export function ContactList() {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
   console.log(filter);
 
-  // const getFilteredContacts = contacts.filter(contact =>
-  //   contact.name.toLowerCase().includes(filter)
-  // );
+  const getFilteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter)
+  );
 
-  // const showContactsOptions = () => {
-  //   return filter ? getFilteredContacts : contacts;
-  // };
+  const showContactsOptions = () => {
+    return filter ? getFilteredContacts : contacts;
+  };
 
-  // const options = showContactsOptions();
+  const options = showContactsOptions();
 
   return (
     <>
       <ListUl>
-        {contacts.map(({ id, name, number }) => (
-          <List key={id}>
-            <ContactItem id={id} name={name} number={number}></ContactItem>
-          </List>
-        ))}
+        {getFilteredContacts.length !== 0 ? (
+          options.map(({ id, name, number }) => (
+            <List key={id}>
+              <ContactItem id={id} name={name} number={number}></ContactItem>
+            </List>
+          ))
+        ) : (
+          <P>
+            You don't have any contacts named
+            <Span> {filter}</Span>
+          </P>
+        )}
       </ListUl>
-      {/* <p>
-        Your list does not contain the contact named
-        <span> {filter}</span>
-      </p> */}
     </>
   );
 }

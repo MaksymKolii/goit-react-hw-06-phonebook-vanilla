@@ -1,19 +1,15 @@
 // import { createReducer } from '@reduxjs/toolkit';
 // import { setFilter } from './filter-actions';
 
-const filtersInitialState = {
-  filter: '',
-};
+// const filtersInitialState = {
+//   filter: '',
+// };
 
-export const filterReducer = (
-  state = filtersInitialState,
-  { type, payload }
-) => {
+export const filterReducer = (state = '', { type, payload }) => {
   switch (type) {
     case 'filters/filter':
-      return {
-        state: payload,
-      };
+      return [payload];
+
     default:
       return state;
   }
